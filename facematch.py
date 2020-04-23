@@ -91,10 +91,10 @@ def images(filename,filename1):
             if facematch == True:
                 st.markdown("As **fotos são da mesma** pessoa :sunglasses:")
                 if gender=='Male':
-                    st.write("Existe uma probabilidade de",100*genderPreds[0].max(),"% do gênero ser masculino")
+                    st.write("Existe uma probabilidade de",round(100*genderPreds[0].max(),2),"% do gênero ser masculino")
                 else:
-                    st.write("Existe uma probabilidade de",100*genderPreds[0].max(),"% do gênero ser feminino")
-                st.write(st.write("Existe uma probabilidade de",100*agePreds[0].max(),"% da idade da pessoa estar no intervalo", age))
+                    st.write("Existe uma probabilidade de",round(100*genderPreds[0].max(),2),"% do gênero ser feminino")
+                st.write(st.write("Existe uma probabilidade de",round(100*agePreds[0].max(),2),"% da idade da pessoa estar no intervalo", age))
                 st.balloons()
             else:
                st.markdown("As **fotos não são da mesma** pessoa :confused:") 
@@ -132,10 +132,10 @@ Esses algoritmos dividem uma imagem em diversos pontos e pixels, mapeando o rost
 * entre tantos outros.''')
 st.header('Demo de face match, estimativa de gênero e idade')
 st.subheader('documento')
-file1 = st.file_uploader("faça o upload de uma foto do seu documento", type=['pgn','jpg','jpge'])
+file1 = st.file_uploader("faça o upload de uma foto do seu documento", type=['pgn','jpg','jpeg'])
 
 st.subheader('selfie')
-file2 = st.file_uploader("faça o upload de uma selfie", type=['pgn','jpg','jpge'])
+file2 = st.file_uploader("faça o upload de uma selfie", type=['pgn','jpg','jpeg'])
 
 if file1 and file2:
     images(file1,file2)
