@@ -102,12 +102,11 @@ def images(filename,filename1):
     else:
         st.markdown("Ei! coloca uma foto com um rosto aí :rage:")
 
-def main(): 
-    st.title('Face Match')
-    image = Image.open('machine-learning.jpg')
-    st.image(image, use_column_width=True)
+st.title('Face Match')
+image = Image.open('machine-learning.jpg')
+st.image(image, use_column_width=True)
     
-    st.markdown("""No processo de confirmação de identidade, Face Match é um recurso cada vez mais utilizado pelas empresas por oferecer mais agilidade através da tecnologia. Nessa demonstração, vamos mostrar um exemplo de face match e dois modelos um que estima o gênero e outro que estima a idade da pessoa da foto. 
+st.markdown("""No processo de confirmação de identidade, Face Match é um recurso cada vez mais utilizado pelas empresas por oferecer mais agilidade através da tecnologia. Nessa demonstração, vamos mostrar um exemplo de face match e dois modelos um que estima o gênero e outro que estima a idade da pessoa da foto. 
     
 ## O que é Face Match?
     
@@ -131,17 +130,15 @@ Esses algoritmos dividem uma imagem em diversos pontos e pixels, mapeando o rost
 * profundidade das órbitas oculares,
 * largura do nariz,
 * entre tantos outros.""")
-    st.header('Demo de face match, estimativa de gênero e idade')
-    st.subheader('documento')
-    file1 = st.file_uploader("faça o upload de uma foto do seu documento", type=['pgn','jpg','jpeg'])
+st.header('Demo de face match, estimativa de gênero e idade')
+st.subheader('documento')
+file1 = st.file_uploader("faça o upload de uma foto do seu documento", type=['pgn','jpg','jpeg'])
     
-    st.subheader('selfie')
-    file2 = st.file_uploader("faça o upload de uma selfie", type=['pgn','jpg','jpeg'])
+st.subheader('selfie')
+file2 = st.file_uploader("faça o upload de uma selfie", type=['pgn','jpg','jpeg'])
     
-    if file1 and file2:
-        images(file1,file2)
-        
-if __name__ == '__main__':
-    main()
+if file1 and file2:
+    images(file1,file2)
+
 
     
