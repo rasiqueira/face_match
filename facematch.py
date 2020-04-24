@@ -101,43 +101,47 @@ def images(filename,filename1):
             
     else:
         st.markdown("Ei! coloca uma foto com um rosto aí :rage:")
- 
-st.title('Face Match')
-image = Image.open('machine-learning.jpg')
-st.image(image, use_column_width=True)
 
-st.markdown('''No processo de confirmação de identidade, Face Match é um recurso cada vez mais utilizado pelas empresas por oferecer mais agilidade através da tecnologia. Nessa demonstração, vamos mostrar um exemplo de face match e dois modelos um que estima o gênero e outro que estima a idade da pessoa da foto. 
-
-## O que é Face Match?
-
-De maneira simples e direta, Face Match é a tecnologia de reconhecimento facial que utiliza inteligência artificial. Muitas vezes tido como um assunto de ficção científica, hoje já é utilizado por diversas áreas e mecanismos, como equipamentos de segurança, smartphones, caixas eletrônicos, entre outros. 
-
-Por vezes, Face Match é associada à ideia de excesso de vigilância e a coleta exagerada de informações pessoais. No entanto, seu trabalho é muito mais dar proteção para o usuário e evitar a ações intrusivas. 
-
-Além disso, é muito mais prático utilizar essa ferramenta para confirmar sua identidade. O usuário irá poupar o tempo de digitar uma senha para desbloquear o seu smartphone ou até mesmo para realizar um saque com um caixa eletrônico. Além disso, simplifica o processo de confirmação de identidade para abrir uma conta, por exemplo. confira o código dessa aplicação em https://github.com/rasiqueira/face_recognition
-
-## Como Face Match funciona?
-
-Face Match é uma tecnologia complexa e é preciso entender seu funcionamento para aplicar valor ao seu negócio e para seu cliente.
-
-Essa técnica de identificação biométrica, assim como a impressão digital, mapeia as características faciais de uma pessoa. Através de um conjunto complexo de algoritmos, compara com imagens de banco de dados ou especificamente de uma imagem digital da mesma pessoa para reconhecer sua identidade (ou negar). 
-
-Esses algoritmos dividem uma imagem em diversos pontos e pixels, mapeando o rosto em busca dos pontos nodais – características de marca a distinção de uma pessoa para outra. Existem cerca de 80 desses pontos na face. Alguns deles são:
-
-* formato do queixo,
-* comprimento da linha da mandíbula,
-* distância entre os olhos,
-* profundidade das órbitas oculares,
-* largura do nariz,
-* entre tantos outros.''')
-st.header('Demo de face match, estimativa de gênero e idade')
-st.subheader('documento')
-file1 = st.file_uploader("faça o upload de uma foto do seu documento", type=['pgn','jpg','jpeg'])
-
-st.subheader('selfie')
-file2 = st.file_uploader("faça o upload de uma selfie", type=['pgn','jpg','jpeg'])
-
-if file1 and file2:
-    images(file1,file2)
+def main(): 
+    st.title('Face Match')
+    image = Image.open('machine-learning.jpg')
+    st.image(image, use_column_width=True)
+    
+    st.markdown('''No processo de confirmação de identidade, Face Match é um recurso cada vez mais utilizado pelas empresas por oferecer mais agilidade através da tecnologia. Nessa demonstração, vamos mostrar um exemplo de face match e dois modelos um que estima o gênero e outro que estima a idade da pessoa da foto. 
+    
+    ## O que é Face Match?
+    
+    De maneira simples e direta, Face Match é a tecnologia de reconhecimento facial que utiliza inteligência artificial. Muitas vezes tido como um assunto de ficção científica, hoje já é utilizado por diversas áreas e mecanismos, como equipamentos de segurança, smartphones, caixas eletrônicos, entre outros. 
+    
+    Por vezes, Face Match é associada à ideia de excesso de vigilância e a coleta exagerada de informações pessoais. No entanto, seu trabalho é muito mais dar proteção para o usuário e evitar a ações intrusivas. 
+    
+    Além disso, é muito mais prático utilizar essa ferramenta para confirmar sua identidade. O usuário irá poupar o tempo de digitar uma senha para desbloquear o seu smartphone ou até mesmo para realizar um saque com um caixa eletrônico. Além disso, simplifica o processo de confirmação de identidade para abrir uma conta, por exemplo. confira o código dessa aplicação em https://github.com/rasiqueira/face_recognition
+    
+    ## Como Face Match funciona?
+    
+    Face Match é uma tecnologia complexa e é preciso entender seu funcionamento para aplicar valor ao seu negócio e para seu cliente.
+    
+    Essa técnica de identificação biométrica, assim como a impressão digital, mapeia as características faciais de uma pessoa. Através de um conjunto complexo de algoritmos, compara com imagens de banco de dados ou especificamente de uma imagem digital da mesma pessoa para reconhecer sua identidade (ou negar). 
+    
+    Esses algoritmos dividem uma imagem em diversos pontos e pixels, mapeando o rosto em busca dos pontos nodais – características de marca a distinção de uma pessoa para outra. Existem cerca de 80 desses pontos na face. Alguns deles são:
+    
+    * formato do queixo,
+    * comprimento da linha da mandíbula,
+    * distância entre os olhos,
+    * profundidade das órbitas oculares,
+    * largura do nariz,
+    * entre tantos outros.''')
+    st.header('Demo de face match, estimativa de gênero e idade')
+    st.subheader('documento')
+    file1 = st.file_uploader("faça o upload de uma foto do seu documento", type=['pgn','jpg','jpeg'])
+    
+    st.subheader('selfie')
+    file2 = st.file_uploader("faça o upload de uma selfie", type=['pgn','jpg','jpeg'])
+    
+    if file1 and file2:
+        images(file1,file2)
+        
+if __name__ == '__main__':
+    main()
 
     
